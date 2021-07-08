@@ -1,6 +1,9 @@
 exports.verificadorDocumento = (documento) => {
     const patronDni = /[0-9]{8}-?[A-Z]/;
-    const esValido = patronDni.test(documento);
+    const patronNIE = /[A-Z][0-9]{7}[A-Z]/;
 
-    return esValido;
+    const esValidoDNI = patronDni.test(documento);
+    const esValidoNIE = patronNIE.test(documento);
+
+    return esValidoDNI || esValidoNIE;
 }
