@@ -11,7 +11,7 @@ router.post('/verificar-documento', (req, res) => {
 
   let esValido;
   console.log(req.body.documento);
-  if (verificadorDocumento(req.body.documento)) {
+  if (verificadorDocumento(req.body.documento.trim())) {
     esValido = 1;   
   }
 
